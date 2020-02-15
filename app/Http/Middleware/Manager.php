@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Middleware;
+
 use Closure;
 use Auth;
 
@@ -15,8 +16,7 @@ class Manager
      */
     public function handle($request, Closure $next)
     {
-        if(Auth::check() && Auth::user()->role > 0)
-        {
+        if (Auth::check() && Auth::user()->role > 0) {
             return $next($request);
         }
         abort('404');

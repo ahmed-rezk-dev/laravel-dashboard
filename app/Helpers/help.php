@@ -37,7 +37,8 @@ function Home()
 function Role()
 {
     $role = Role::findOrFail(Auth::user()->role);
-    if (count($role) > 0) {
+
+    if ($role->count() > 0) {
         return $role->role;
     } else {
         return 'عضو';
@@ -381,7 +382,6 @@ function send_mobile_sms($numbers, $msg)
         if (in_array(mb_substr($msg, $i, 1, 'UTF-8'), $chrArray)) {
             $strResult .= $unicodeArray[array_search(mb_substr($msg, $i, 1, 'UTF-8'), $chrArray)];
         }
-
     }
 
     $database = SmsEmailNotification::first();
@@ -430,7 +430,6 @@ function Report($user_id, $event)
         $report->supervisor = 0;
         $report->save();
     }
-
 }
 
 #current route

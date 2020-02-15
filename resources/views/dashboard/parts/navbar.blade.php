@@ -1,6 +1,8 @@
 <div class="navbar navbar-inverse">
 	<div class="navbar-header">
-		<a class="navbar-brand" href="https://www.aait.sa">TreeCodes</a>
+		<a class="navbar-brand" href="https://ahmed-rezk.herokuapp.com/" title="Ahmed Rezk">
+			<img src="{{asset('dashboard/images/logo.png')}}" alt="Ahmed Rezk">
+		</a>
 
 		<ul class="nav navbar-nav visible-xs-block">
 			<li><a data-toggle="collapse" data-target="#navbar-mobile"><i class="icon-tree5"></i></a></li>
@@ -24,13 +26,13 @@
 					<span class="visible-xs-inline-block position-right">Messages</span>
 					<span class="badge bg-warning-400">{{count(Notification())}}</span>
 				</a>
-				
+
 				<div class="dropdown-menu dropdown-content width-350" style="width: 250px">
 
 					<ul class="media-list dropdown-content-body">
 						@foreach(Notification() as $n)
-							<li class="media">
-								<div class="media-left">
+						<li class="media">
+							<div class="media-left">
 
 								<div class="media-body">
 									<a href="{{route('showmessage',$n->id)}}" class="media-heading">
@@ -40,8 +42,8 @@
 
 									<span class="text-muted">{{str_limit($n->message,30)}}</span>
 								</div>
-							</li>
-							<hr>
+						</li>
+						<hr>
 						@endforeach
 					</ul>
 

@@ -41,11 +41,11 @@ return [
 
         'mysql' => [
             'driver' => 'mysql',
-            'host' =>'127.0.0.1',
+            'host' => '127.0.0.1',
             'port' => '3306',
-            'database' => 'boulareblate',
+            'database' => 'laravel_dashboard',
             'username' => 'root',
-            'password' => null,
+            'password' => 'root',
             'unix_socket' => env('DB_SOCKET', ''),
             'charset' => 'utf8mb4',
             'collation' => 'utf8mb4_unicode_ci',
